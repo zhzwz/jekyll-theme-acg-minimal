@@ -1,28 +1,27 @@
 name: github-pages
-
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
 jobs:
-  github-pages:
+  Deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: install ruby
+      - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
-      - name: install jekyll
-        run: |
-          gem install bundler jekyll
-          bundle install
-          bundle exec jekyll -v
-      - name: build
+          bundler-cache: true
+      - name: Install jekyll
+        run: gem install jekyll bundler & jekyll --version
+      - name: Update gem
+        run: bundle update
+      - name: Build jekyll
         run: bundle exec jekyll build
-      - name: deploy
+      - name: Deploy site
         uses: crazy-max/ghaction-github-pages@v2
         with:
           build_dir: _site
