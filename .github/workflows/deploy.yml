@@ -16,7 +16,7 @@ jobs:
           ruby-version: 2.7
           bundler-cache: true
       - name: Install jekyll
-        run: gem install jekyll bundler & jekyll --version
+        run: gem install jekyll bundler & bundle exec jekyll --version
       - name: Update gem
         run: bundle update
       - name: Build jekyll
