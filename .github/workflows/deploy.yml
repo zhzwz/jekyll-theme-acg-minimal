@@ -1,0 +1,28 @@
+name: github-pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: install
+        run: |
+          gem install bundler jekyll
+          bundle install
+          bundle exec jekyll -v
+      - name: build
+        run: bundle exec jekyll build
+      - name: deploy
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          build_dir: _site
+          target_branch: github-pages
+          commit_message: "chore(deploy): deploy to github-pages branch"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
