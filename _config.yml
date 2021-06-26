@@ -1,6 +1,7 @@
 title: Minimal
 description: This is a minimal demo for jekyll-theme-acg.
 author: Coder Zhao
+lang: en-US
 
 url:
 baseurl: jekyll-theme-acg-minimal
