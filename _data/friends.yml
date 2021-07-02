@@ -1,0 +1,6 @@
+- name: Jekyll
+  link: https://jekyllrb.com
+  description: Transform your plain text into static websites and blogs.
+- name: Liquid
+  link: https://shopify.github.io/liquid
+  description: Safe, customer-facing template language for flexible web apps.

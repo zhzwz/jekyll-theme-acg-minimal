@@ -1,33 +1,50 @@
+url: https://coderzhaoziwei.github.io
+baseurl: jekyll-theme-acg-minimal
 title: Minimal
 description: This is a minimal demo for jekyll-theme-acg.
 author: Coder Zhao
-lang: en-US
-
-url:
-baseurl: jekyll-theme-acg-minimal
-
+lang:
 theme: jekyll-theme-acg
-acg:
-  color: red
-  categories: Categories
-  tags: Tags
-  about: About
-  error: Page not found.
-  github: coderzhaoziwei
 
+acg:
+  color:
+  background:
+  categories:
+    label:
+    description:
+  tags:
+    label:
+    description:
+  about:
+    label:
+    description:
+  friends:
+    label:
+    description:
+  error:
+    label:
+    description:
+
+exclude: [
+  "LICENSE",
+  "README.md",
+  "package.json",
+]
 
 defaults:
-  - scope:
-      path: ""
-    values:
-      layout: page
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
-
-collections:
-  posts:
-    output: true
-    permalink: /:collection/:title
+- scope:
+    path: ""
+  values:
+    layout: page
+- scope:
+    path: "index.html"
+  values:
+    layout: page
+    type: home
+- scope:
+    path: ""
+    type: posts
+  values:
+    layout: page
+    permalink: /posts/:title
+    type: post
