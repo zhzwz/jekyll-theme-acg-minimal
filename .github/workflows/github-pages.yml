@@ -13,13 +13,9 @@ jobs:
         with:
           ruby-version: 2.7
           bundler-cache: true
-      - run: |
-          gem install jekyll bundler
-          bundle exec jekyll --version
-          bundle install
-          bundle update
-          bundle exec jekyll build
-
+      - run: gem install jekyll bundler
+      - run: bundle update
+      - run: bundle exec jekyll build
       - uses: crazy-max/ghaction-github-pages@v2
         with:
           build_dir: _site
