@@ -8,31 +8,19 @@ jobs:
   github-pages:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Cache
-        uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-
-      - name: Setup
-        uses: ruby/setup-ruby@v1
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
-
-      - name: Jekyll
-        run: |
+          bundler-cache: true
+      - run: |
           gem install jekyll bundler
           bundle exec jekyll --version
+          bundle install
           bundle update
           bundle exec jekyll build
 
-      - name: Deploy
-        uses: crazy-max/ghaction-github-pages@v2
+      - uses: crazy-max/ghaction-github-pages@v2
         with:
           build_dir: _site
           target_branch: github-pages
