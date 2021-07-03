@@ -9,6 +9,6 @@
 
 ## Usage
 
-- Fork this minimal demo.
+- Fork this repo.
 
 - Run `bundle update && bundle exec jekyll serve -o` to build the site and make it available on a local server.
