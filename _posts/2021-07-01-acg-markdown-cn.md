@@ -1,5 +1,5 @@
 ---
-title: 展示 Markdown 语法的渲染效果
+title: Markdown 语法的渲染效果
 description: 介绍 Jekyll Theme ACG 主题对 Markdown 语法的支持与使用方式。
 categories: ["Jekyll Theme ACG"]
 tags: ["markdown", "chinese"]
