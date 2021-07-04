@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-US" class="min-h-screen bg-image bg-cover bg-center bg-fixed"> <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Begin Jekyll SEO tag v2.7.1 --> <title>Markdown 语法的渲染效果 | Minimal</title> <meta name="generator" content="Jekyll v4.2.0"> <meta property="og:title" content="Markdown 语法的渲染效果"> <meta name="author" content="Coder Zhao"> <meta property="og:locale" content="en_US"> <meta name="description" content="介绍 Jekyll Theme ACG 主题对 Markdown 语法的支持与使用方式。"> <meta property="og:description" content="介绍 Jekyll Theme ACG 主题对 Markdown 语法的支持与使用方式。"> <link rel="canonical" href="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/acg-markdown-cn"> <meta property="og:url" content="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/acg-markdown-cn"> <meta property="og:site_name" content="Minimal"> <meta property="og:type" content="article"> <meta property="article:published_time" content="2021-07-01T00:00:00+00:00"> <meta name="twitter:card" content="summary"> <meta property="twitter:title" content="Markdown 语法的渲染效果"> <script type="application/ld+json"> {"author":{"@type":"Person","name":"Coder Zhao"},"headline":"Markdown 语法的渲染效果","dateModified":"2021-07-01T00:00:00+00:00","datePublished":"2021-07-01T00:00:00+00:00","description":"介绍 Jekyll Theme ACG 主题对 Markdown 语法的支持与使用方式。","url":"https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/acg-markdown-cn","mainEntityOfPage":{"@type":"WebPage","@id":"https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/acg-markdown-cn"},"@type":"BlogPosting","@context":"https://schema.org"}</script> <!-- End Jekyll SEO tag --> <!-- Begin Jekyll Feed --> <link type="application/atom+xml" rel="alternate" href="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/feed.xml" title="Minimal"> <!-- End Jekyll Feed --> <!-- Tailwind --> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css"> <!-- Primer Markdown --> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/primer-markdown@4.0.0/build/build.css"> <!-- HighlightJS --> <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.1/build/highlight.min.js"></script> <script>hljs.highlightAll();</script> <!-- HighlightJS Theme VS2015 --> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.0.1/styles/vs2015.css"> <!-- MathJax @see https://www.mathjax.org --> <script> MathJax = { tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]] }, }; </script> <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script> <!-- Theme --> <link rel="stylesheet" href="/jekyll-theme-acg-minimal/assets/css/style.css"> <style id="ThemeColor"> :root { --theme-50: var(--red-50); --theme-100: var(--red-100); --theme-200: var(--red-200); --theme-300: var(--red-300); --theme-400: var(--red-400); --theme-500: var(--red-500); --theme-600: var(--red-600); --theme-700: var(--red-700); --theme-800: var(--red-800); --theme-900: var(--red-900); } </style> <style id="ThemeBackgroundImage">.bg-image { background-image: url("https://cdn.jsdelivr.net/gh/coderzhaoziwei/jekyll-theme-acg/assets/images/pixiv86925095.png"); }</style> </head> <body class="flex flex-col items-center bg-black bg-opacity-50"> <header class="w-full fixed z-50 select-none bg-red-600 bg-opacity-10 bg-blur"> <nav class="p-4 font-serif text-xl text-red-50 flex justify-between"> <a class="hover:text-red-400 text-2xl" href="/jekyll-theme-acg-minimal/">Minimal</a> <div class="hidden md:block space-x-4"> <a class="hover:text-red-400" href="/jekyll-theme-acg-minimal/categories">Categories</a> <a class="hover:text-red-400" href="/jekyll-theme-acg-minimal/tags">Tags</a> <a class="hover:text-red-400" href="/jekyll-theme-acg-minimal/about">About</a> <a class="hover:text-red-400" href="/jekyll-theme-acg-minimal/friends">Friends</a> </div> <style>#theme-menu:hover > #theme-menu-dropdown { display: block; }</style> <div id="theme-menu" class="md:hidden"> <button class="hover:outline-none hover:text-red-400"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg> </button> <div class="hidden origin-top-right absolute right-1 rounded-md py-1 bg-red-100 bg-opacity-50 focus:block focus:outline-none" id="theme-menu-dropdown"> <a class="block px-4 py-2 text-sm text-red-600 hover:bg-red-200" href="/jekyll-theme-acg-minimal/categories">Categories</a> <a class="block px-4 py-2 text-sm text-red-600 hover:bg-red-200" href="/jekyll-theme-acg-minimal/tags">Tags</a> <a class="block px-4 py-2 text-sm text-red-600 hover:bg-red-200" href="/jekyll-theme-acg-minimal/about">About</a> <a class="block px-4 py-2 text-sm text-red-600 hover:bg-red-200" href="/jekyll-theme-acg-minimal/friends">Friends</a> </div> </div> </nav> </header> <div class="w-acg min-h-screen py-16"> <div class="w-full flex flex-col justify-center items-center content-center text-red-50 py-32"> <!-- title --> <div class="text-center text-4xl font-serif py-8"> Markdown 语法的渲染效果 </div> <!-- description --> <div class="text-center text-base font-sans py-8">介绍 Jekyll Theme ACG 主题对 Markdown 语法的支持与使用方式。</div> <!-- categories.html & tags.html --> <div class="flex flex-wrap justify-center items-center content-center select-none"> </div> </div> <!-- article --> <div class="flex flex-wrap"> <div class="flex-grow"> <a class="mx-px text-opacity-75 flex items-center select-none text-sm text-red-500"> <!-- svg --> <svg class=" w-4 h-4 " xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"> </path></svg> <!-- text --> <span class="inline-block p-1 whitespace-nowrap">2021-07-01</span> <!-- count --> </a> </div> <div class="flex flex-wrap"> <a class="mx-px text-opacity-75 flex items-center select-none text-sm text-red-500" href="/jekyll-theme-acg-minimal/categories/jekyll-theme-acg"> <!-- svg --> <svg class=" w-4 h-4 " xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"> </path></svg> <!-- text --> <span class="inline-block p-1 whitespace-nowrap">Jekyll Theme ACG</span> <!-- count --> </a> <a class="mx-px text-opacity-75 flex items-center select-none text-sm text-red-500" href="/jekyll-theme-acg-minimal/tags/markdown"> <!-- svg --> <svg class=" w-4 h-4 " xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"> </path></svg> <!-- text --> <span class="inline-block p-1 whitespace-nowrap">markdown</span> <!-- count --> </a> <a class="mx-px text-opacity-75 flex items-center select-none text-sm text-red-500" href="/jekyll-theme-acg-minimal/tags/chinese"> <!-- svg --> <svg class=" w-4 h-4 " xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"> </path></svg> <!-- text --> <span class="inline-block p-1 whitespace-nowrap">chinese</span> <!-- count --> </a> </div> </div> <article class="w-full my-4 mx-auto p-4 rounded-lg text-black bg-red-50 bg-opacity-75 markdown-body"> <h1>Markdown 语法的渲染效果</h1> <ul id="toc" class="toc">
+<li class="toc-li-2"><a class="toc-a" href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li class="toc-li-2">
+<a class="toc-a" href="#%E5%88%97%E8%A1%A8">列表</a><ul class="toc-sub-2">
+<li class="toc-li-3"><a class="toc-a" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8">无序列表</a></li>
+<li class="toc-li-3"><a class="toc-a" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8">有序列表</a></li>
+<li class="toc-li-3"><a class="toc-a" href="#%E5%BE%85%E5%8A%9E%E5%88%97%E8%A1%A8">待办列表</a></li>
+</ul>
+</li>
+<li class="toc-li-2">
+<a class="toc-a" href="#%E8%A1%A8%E6%A0%BC">表格</a><ul class="toc-sub-2">
+<li class="toc-li-3"><a class="toc-a" href="#%E6%A0%87%E5%87%86%E8%A1%A8%E6%A0%BC">标准表格</a></li>
+<li class="toc-li-3"><a class="toc-a" href="#%E5%BF%BD%E7%95%A5%E8%A1%A8%E5%A4%B4%E4%B8%8E%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F">忽略表头与对齐方式</a></li>
+<li class="toc-li-3"><a class="toc-a" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F">自定义对齐方式</a></li>
+<li class="toc-li-3"><a class="toc-a" href="#%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC%E5%88%97">合并表格列</a></li>
+<li class="toc-li-3"><a class="toc-a" href="#%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC%E8%A1%8C">合并表格行</a></li>
+</ul>
+</li>
+<li class="toc-li-2">
+<a class="toc-a" href="#%E4%BB%A3%E7%A0%81">代码</a><ul class="toc-sub-2">
+<li class="toc-li-3"><a class="toc-a" href="#%E5%8D%95%E8%A1%8C%E4%BB%A3%E7%A0%81">单行代码</a></li>
+<li class="toc-li-3"><a class="toc-a" href="#%E5%A4%9A%E8%A1%8C%E4%BB%A3%E7%A0%81">多行代码</a></li>
+</ul>
+</li>
+<li class="toc-li-2">
+<a class="toc-a" href="#%E5%9B%BE%E7%89%87">图片</a><ul class="toc-sub-2">
+<li class="toc-li-3"><a class="toc-a" href="#%E6%99%AE%E9%80%9A%E5%9B%BE%E7%89%87">普通图片</a></li>
+<li class="toc-li-3"><a class="toc-a" href="#%E4%BF%AE%E6%94%B9%E5%9B%BE%E7%89%87%E7%9A%84%E6%A0%B7%E5%BC%8F">修改图片的样式</a></li>
+</ul>
+</li>
+<li class="toc-li-2">
+<a class="toc-a" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F">数学公式</a><ul class="toc-sub-2">
+<li class="toc-li-3"><a class="toc-a" href="#%E8%A1%8C%E5%86%85%E5%85%AC%E5%BC%8F">行内公式</a></li>
+<li class="toc-li-3"><a class="toc-a" href="#%E5%9D%97%E7%BA%A7%E5%85%AC%E5%BC%8F">块级公式</a></li>
+</ul>
+</li>
+<li class="toc-li-2">
+<a class="toc-a" href="#%E5%85%B6%E4%BB%96">其他</a><ul class="toc-sub-2">
+<li class="toc-li-3"><a class="toc-a" href="#%E6%96%87%E6%9C%AC%E5%80%BE%E6%96%9C">文本倾斜</a></li>
+<li class="toc-li-3"><a class="toc-a" href="#%E6%96%87%E6%9C%AC%E5%8A%A0%E7%B2%97">文本加粗</a></li>
+<li class="toc-li-3"><a class="toc-a" href="#%E6%96%87%E6%9C%AC%E5%88%A0%E9%99%A4">文本删除</a></li>
+<li class="toc-li-3"><a class="toc-a" href="#%E5%88%86%E5%89%B2%E7%BA%BF">分割线</a></li>
+<li class="toc-li-3"><a class="toc-a" href="#%E9%93%BE%E6%8E%A5">链接</a></li>
+<li class="toc-li-3"><a class="toc-a" href="#%E5%BC%95%E7%94%A8">引用</a></li>
+<li class="toc-li-3"><a class="toc-a" href="#%E8%84%9A%E6%B3%A8">脚注</a></li>
+<li class="toc-li-3"><a class="toc-a" href="#%E9%94%AE%E7%9B%98%E6%8C%89%E9%92%AE">键盘按钮</a></li>
+<li class="toc-li-3"><a class="toc-a" href="#emoji">Emoji</a></li>
+</ul>
+</li>
+</ul> <h2 id="简介">简介</h2> <blockquote> <p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的 HTML 文档。</p> <p>由于 Markdown 的轻量化、易读易写特性，甚至对于图片、图表、数学公式都有支持，目前许多网站都广泛使用 Markdown 来撰写帮助文档，或是用于论坛上发表消息。</p> <p class="text-right">—— <a href="https://zh.wikipedia.org/wiki/Markdown">维基百科</a></p> </blockquote> <p>Github 支持的 Markdown 语法标准被称为 <a href="https://help.github.com/articles/github-flavored-markdown">GitHub Flavored Markdown</a>，简称 GFM。Jekyll Theme ACG 主题在 GFM 的语法之外还支持一些其他的特性与使用方式。</p> <h2 id="列表">列表</h2> <h3 id="无序列表">无序列表</h3> <ul> <li>输入：</li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- A
+  - a
+    - i
+    - ii
+  - b
+    - I
+    - II
+- B
+</code></pre></div></div> <ul> <li> <p>输出：</p> </li> <li>A <ul> <li>a <ul> <li>i</li> <li>ii</li> </ul> </li> <li>b <ul> <li>I</li> <li>II</li> </ul> </li> </ul> </li> <li>B</li> </ul> <h3 id="有序列表">有序列表</h3> <ul> <li>输入：</li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. A
+   1. a
+   1. b
+   1. c
+2. B
+3. C
+</code></pre></div></div> <ul> <li>输出：</li> </ul> <ol> <li>A <ol> <li>a</li> <li>b</li> <li>c</li> </ol> </li> <li>B</li> <li>C</li> </ol> <blockquote> <p>无序的数字会自动变为有序。</p> </blockquote> <h3 id="待办列表">待办列表</h3> <ul> <li>输入：</li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- [x] 待办一
+- [ ] 待办二
+- [x] 待办三
+- [ ] 待办四
+</code></pre></div></div> <ul class="task-list"> <li>输出：</li> <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>待办一</li> <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>待办二</li> <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>待办三</li> <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>待办四</li> </ul> <h2 id="表格">表格</h2> <h3 id="标准表格">标准表格</h3> <ul> <li>输入：</li> </ul>
+<pre><code class="language-markdown"># 标准 Markdown 语法中的表格示例
+| Column A | Column B | Column C |
+| :------- | :<span>------</span>: | -------: |
+|   Left   |  Center  |  Right   |
+|    A     |    B     |    C     |
+</code></pre>
+<ul> <li>输出：</li> </ul> <table> <thead> <tr> <th style="text-align: left">Column A</th> <th style="text-align: center">Column B</th> <th style="text-align: right">Column C</th> </tr> </thead> <tbody> <tr> <td style="text-align: left">Left</td> <td style="text-align: center">Center</td> <td style="text-align: right">Right</td> </tr> <tr> <td style="text-align: left">A</td> <td style="text-align: center">B</td> <td style="text-align: right">C</td> </tr> </tbody> </table> <h3 id="忽略表头与对齐方式">忽略表头与对齐方式</h3> <p>与标准的 Markdown 语法不同，表格的表头与对齐方式可以省略。</p> <ul> <li>输入：</li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+| 7 | 8 | 9 |
+</code></pre></div></div> <ul> <li>输出：</li> </ul> <table> <tbody> <tr> <td>1</td> <td>2</td> <td>3</td> </tr> <tr> <td>4</td> <td>5</td> <td>6</td> </tr> <tr> <td>7</td> <td>8</td> <td>9</td> </tr> </tbody> </table> <h3 id="自定义对齐方式">自定义对齐方式</h3> <ul> <li>输入：</li> </ul>
+<pre><code class="language-markdown"># 每个单元格都可以使用 `:` 控制自身的对齐方式。
+| ########## | ########## | ########## |
+|:   Left    |:  Center  :|   Right   :|
+|:  Center  :|   Right   :|:   Left    |
+|   Right   :|:   Left    |:  Center  :|
+</code></pre>
+<ul> <li>输出：</li> </ul> <table> <tbody> <tr> <td>##########</td> <td>##########</td> <td>##########</td> </tr> <tr> <td style="text-align: left">Left</td> <td style="text-align: center">Center</td> <td style="text-align: right">Right</td> </tr> <tr> <td style="text-align: center">Center</td> <td style="text-align: right">Right</td> <td style="text-align: left">Left</td> </tr> <tr> <td style="text-align: right">Right</td> <td style="text-align: left">Left</td> <td style="text-align: center">Center</td> </tr> </tbody> </table> <h3 id="合并表格列">合并表格列</h3> <ul> <li>输入：</li> </ul>
+<pre><code class="language-markdown"># 在 `||` 之间所表示的单元格，将被合并。
+| 1 | 2 | 3 |
+|: 45 :|<b></b>| 6 |
+|: 789   :|<b></b>|<b></b>|
+</code></pre>
+<ul> <li>输出：</li> </ul> <table> <tbody> <tr> <td>1</td> <td>2</td> <td>3</td> </tr> <tr> <td colspan="2" style="text-align: center">45</td> <td>6</td>  </tr> <tr> <td colspan="3" style="text-align: center">789</td>   </tr> </tbody> </table> <h3 id="合并表格行">合并表格行</h3> <ul> <li>输入：</li> </ul>
+<pre><code class="language-markdown"># 以 `^^` 开头的单元格，将被合并。
+| 1 | 2 |  3  |
+| 4  5 |<b></b>|^^ 6 |
+|^^ 7 8|<b></b>|  9  |
+</code></pre>
+<ul> <li>输出：</li> </ul> <table> <tbody> <tr> <td>1</td> <td>2</td> <td rowspan="2">3
+<br>
+6</td> </tr> <tr> <td colspan="2" rowspan="2">4 5
+<br>
+7 8</td>   </tr> <tr>  <td>9</td>  </tr> </tbody> </table> <h2 id="代码">代码</h2> <h3 id="单行代码">单行代码</h3> <ul> <li> <p>输入：<code class="language-plaintext highlighter-rouge">`const name = "jekyll-theme-acg";`</code></p> </li> <li> <p>输出：<code class="language-plaintext highlighter-rouge">const name = "jekyll-theme-acg";</code></p> </li> </ul> <h3 id="多行代码">多行代码</h3> <ul> <li>输入：</li> </ul>
+<pre><code class="language-markdown">```javascript
+function print() {
+  console.log("Hello world.");
+}
+print(); // Hello world.
+```</code></pre>
+<ul> <li>输出：</li> </ul> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">print</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello world.</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">print</span><span class="p">();</span> <span class="c1">// Hello world.</span>
+</code></pre></div></div> <h2 id="图片">图片</h2> <h3 id="普通图片">普通图片</h3> <ul> <li>输入：<code class="language-plaintext highlighter-rouge">![背景图](https://cdn.jsdelivr.net/gh/coderzhaoziwei/jekyll-theme-acg/assets/images/pixiv86925095.png)</code>
+</li> <li>输出：<img src="https://cdn.jsdelivr.net/gh/coderzhaoziwei/jekyll-theme-acg/assets/images/pixiv86925095.png" alt="背景图">
+</li> </ul> <h3 id="修改图片的样式">修改图片的样式</h3> <ul> <li>输入：</li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![背景图](https://cdn.jsdelivr.net/gh/coderzhaoziwei/jekyll-theme-acg/assets/images/pixiv86925095.png){: style="width: 128px; height: 128px; object-fit: cover; float: right; animation: spin 10s linear infinite;" class="m-2 rounded-full" }
+
+- 这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落。
+</code></pre></div></div> <ul> <li> <p>输出：<img src="https://cdn.jsdelivr.net/gh/coderzhaoziwei/jekyll-theme-acg/assets/images/pixiv86925095.png" alt="背景图" style="width: 128px; height: 128px; object-fit: cover; float: right; animation: spin 10s linear infinite;" class="m-2 rounded-full"></p> </li> <li> <p>这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落。</p> </li> </ul> <blockquote> <p>不仅仅适用于图片，使用 <code class="language-plaintext highlighter-rouge">{: key="value" }</code> 的格式，可以在 Markdown 中为元素添加 HTML 属性。这里的示例甚至制作了动画效果。</p> </blockquote> <h2 id="数学公式">数学公式</h2> <h3 id="行内公式">行内公式</h3> <ul> <li>输入：<code class="language-plaintext highlighter-rouge">$\Gamma(n) = (n-1)!\quad\forall n \in\mathbb N$</code>
+</li> <li>输出：$\Gamma(n) = (n-1)!\quad\forall n \in\mathbb N$</li> </ul> <h3 id="块级公式">块级公式</h3> <ul> <li>输入：</li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$ ax^2 + bx + c = 0 \quad (a \neq 0)  $$
+
+$$ x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
+</code></pre></div></div> <ul> <li>输出：</li> </ul> \[ax^2 + bx + c = 0 \quad (a \neq 0)\] \[x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}\] <blockquote> <p>使用鼠标右键生成的公式图片，还有小惊喜。</p> </blockquote> <h2 id="其他">其他</h2> <h3 id="文本倾斜">文本倾斜</h3> <ul> <li>输入：<code class="language-plaintext highlighter-rouge">*文本倾斜*</code> / <code class="language-plaintext highlighter-rouge">_文本倾斜_</code>
+</li> <li>输出：<em>文本倾斜</em> / <em>文本倾斜</em>
+</li> </ul> <h3 id="文本加粗">文本加粗</h3> <ul> <li>输入：<code class="language-plaintext highlighter-rouge">**文本加粗**</code> / <code class="language-plaintext highlighter-rouge">__文本加粗__</code>
+</li> <li>输出：<strong>文本加粗</strong> / <strong>文本加粗</strong>
+</li> </ul> <h3 id="文本删除">文本删除</h3> <ul> <li>输入：<code class="language-plaintext highlighter-rouge">~~删除线~~</code>
+</li> <li>输出：<del>删除线</del>
+</li> </ul> <h3 id="分割线">分割线</h3> <ul> <li>输入：</li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*****
+</code></pre></div></div> <ul> <li>输出：</li> </ul> <hr> <blockquote> <p>单独一行，连续使用三个以上的 <code class="language-plaintext highlighter-rouge">-</code> 或 <code class="language-plaintext highlighter-rouge">*</code> 就可以生成分割线。 因为 <code class="language-plaintext highlighter-rouge">---</code> 会被识别为 <code class="language-plaintext highlighter-rouge">Front Matter</code>，所以推荐使用 <code class="language-plaintext highlighter-rouge">*</code> 号生成分割线。</p> </blockquote> <h3 id="链接">链接</h3> <ul> <li>输入：<code class="language-plaintext highlighter-rouge">[Github](https://github.com)</code>
+</li> <li>输出：<a href="https://github.com">Github</a>
+</li> </ul> <h3 id="引用">引用</h3> <ul> <li>输入：</li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; 通常用于引用一段其他地方的内容。
+&gt; 普通换行的内容，会接在上一行的结尾。
+&gt;
+&gt; 在引用中置空一行，才可以换行。
+&gt;
+&gt; &gt; 引用的嵌套。
+</code></pre></div></div> <ul> <li>输出：</li> </ul> <blockquote> <p>通常用于引用一段其他地方的内容。 普通换行的内容，会接在上一行的结尾。</p> <p>在引用中置空一行，才可以换行。</p> <blockquote> <p>引用的嵌套。</p> </blockquote> </blockquote> <h3 id="脚注">脚注</h3> <ul> <li>输入：</li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 第一句话有一个示例脚注一。[^footnote1]
+
+[^footnote1]: 对脚注对象进行说明一。
+
+- 第二句话有一个示例脚注二。[^footnote2]
+
+[^footnote2]: 对脚注对象进行说明二。
+</code></pre></div></div> <ul> <li> <p>输出：</p> </li> <li> <p>第一句话有一个示例脚注一。<sup id="fnref:footnote1" role="doc-noteref"><a href="#fn:footnote1" class="footnote" rel="footnote">1</a></sup></p> </li> </ul> <ul> <li>第二句话有一个示例脚注二。<sup id="fnref:footnote2" role="doc-noteref"><a href="#fn:footnote2" class="footnote" rel="footnote">2</a></sup>
+</li> </ul> <h3 id="键盘按钮">键盘按钮</h3> <ul> <li>输入：<code class="language-plaintext highlighter-rouge">&lt;kbd&gt;Ctrl&lt;/kbd&gt; / &lt;kbd&gt;Command&lt;/kbd&gt; + &lt;kbd&gt;C&lt;/kbd&gt;</code>
+</li> <li>输出：<kbd>Ctrl</kbd> / <kbd>Command</kbd> + <kbd>C</kbd>
+</li> </ul> <h3 id="emoji">Emoji</h3> <ul> <li> <p>输入：<code class="language-plaintext">:<b></b>cat<b></b>: :<b></b>dog<b></b>:</code></p> </li> <li> <p>输出：<img class="emoji" title=":cat:" alt=":cat:" raw="🐱" src="https://github.githubassets.com/images/icons/emoji/unicode/1f431.png" style="vertical-align: middle; display: inline; max-width: 1em; visibility: hidden;" onload="this.style.visibility='visible'" onerror="this.replaceWith(this.getAttribute('raw'))"><img class="emoji" title=":dog:" alt=":dog:" raw="🐶" src="https://github.githubassets.com/images/icons/emoji/unicode/1f436.png" style="vertical-align: middle; display: inline; max-width: 1em; visibility: hidden;" onload="this.style.visibility='visible'" onerror="this.replaceWith(this.getAttribute('raw'))"></p> </li> </ul> <blockquote> <p>更多表情可以参考：<a href="https://github.com/ikatyang/emoji-cheat-sheet">emoji-cheat-sheet</a></p> </blockquote> <div class="footnotes" role="doc-endnotes"> <ol> <li id="fn:footnote1" role="doc-endnote"> <p>对脚注对象进行说明一。 <a href="#fnref:footnote1" class="reversefootnote" role="doc-backlink">↩</a></p> </li> <li id="fn:footnote2" role="doc-endnote"> <p>对脚注对象进行说明二。 <a href="#fnref:footnote2" class="reversefootnote" role="doc-backlink">↩</a></p> </li> </ol> </div> </article> <div class="w-full mx-auto flex justify-between space-x-4"> <!-- prev --> <a class="w-1/2 p-4 flex items-center rounded-lg bg-red-50 bg-opacity-75" href="/jekyll-theme-acg-minimal/posts/acg-markdown-en"> <svg class=" flex-shrink-0 text-red-600 w-6 h-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z"> </path></svg> <span class="ml-4 text-black">Rendering effect of Markdown syntax</span> </a> <!-- next --> <a class="w-1/2 p-4 flex flex-row-reverse items-center rounded-lg bg-red-50 bg-opacity-75" href="/jekyll-theme-acg-minimal/posts/post-bg"> <svg class=" flex-shrink-0 text-red-600 w-6 h-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"> </path></svg> <span class="mr-4 text-black">Configure background</span> </a> </div> <!-- posts --> </div> <footer class="w-full mt-4 p-2 text-sm text-red-100 "> <p class="text-center"> Powered by <a class="text-red-400" href="https://jekyllrb.com" target="_block">Jekyll</a> · <a class="text-red-400" href="https://github.com/coderzhaoziwei/jekyll-theme-acg" target="_block">Jekyll Theme ACG</a> </p> <p class="text-center"> Copyright 2021 <a class="text-red-400">Coder Zhao</a> · All rights reserved. </p> </footer> </body> </html>

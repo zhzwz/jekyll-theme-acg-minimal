@@ -1,0 +1,1437 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/feed.xml" rel="self" type="application/atom+xml" /><link href="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/" rel="alternate" type="text/html" /><updated>2021-07-04T04:54:31+00:00</updated><id>https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/feed.xml</id><title type="html">Minimal</title><subtitle>This is a minimal demo for jekyll-theme-acg.</subtitle><author><name>Coder Zhao</name></author><entry><title type="html">Jekyll Theme ACG 主题使用指南</title><link href="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/acg-guide-cn" rel="alternate" type="text/html" title="Jekyll Theme ACG 主题使用指南" /><published>2021-07-03T00:00:00+00:00</published><updated>2021-07-03T00:00:00+00:00</updated><id>https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/acg-guide-cn</id><content type="html" xml:base="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/acg-guide-cn">&lt;h2 id=&quot;快速开始&quot;&gt;快速开始&lt;/h2&gt;
+
+&lt;h3 id=&quot;依赖环境&quot;&gt;依赖环境&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ruby 2.7&lt;/li&gt;
+  &lt;li&gt;bundle 2.2&lt;/li&gt;
+  &lt;li&gt;jekyll 4.2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;手动安装&quot;&gt;手动安装&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fork 项目 &lt;a href=&quot;https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal&quot;&gt;jekyll-theme-acg-minimal&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;执行命令 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle update &amp;amp;&amp;amp; bundle exec jekyll serve -o&lt;/code&gt; 开始本地测试&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;自动部署&quot;&gt;自动部署&lt;/h3&gt;
+
+&lt;p&gt;每当分支 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; 有 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;push&lt;/code&gt; 操作，GitHub Actions 会执行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.github/workflows/deploy.yml&lt;/code&gt; 文件内容，在分支 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;github-pages&lt;/code&gt; 上发布站点内容。&lt;/p&gt;
+
+&lt;p&gt;别忘记配置 Github 项目仓库的相关设置，如下图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-07-03-settings-pages.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;全局配置&quot;&gt;全局配置&lt;/h2&gt;
+
+&lt;p&gt;全局配置存放于配置文件 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 中。&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                    &lt;span class=&quot;c1&quot;&gt;# 站点地址&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;baseurl&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# 站点路径，默认值 `/`&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                  &lt;span class=&quot;c1&quot;&gt;# 站点名称&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;            &lt;span class=&quot;c1&quot;&gt;# 站点描述&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                 &lt;span class=&quot;c1&quot;&gt;# 作者名称，目前仅用于在页脚中显示。&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                   &lt;span class=&quot;c1&quot;&gt;# 站点语言，默认值 `en-US`&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-theme-acg&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 主题名称&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 主题属性&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;acg&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# 主题颜色，默认值 `red`&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;           &lt;span class=&quot;c1&quot;&gt;# 主题背景，默认值 `https://cdn.jsdelivr.net/gh/coderzhaoziwei/jekyll-theme-acg/assets/images/pixiv86925095.png`&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;# 分类名称，默认值 `Categories`&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;# 分类描述&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;# 标签名称，默认值 `Tags`&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;# 标签描述&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;about&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;# 关于名称，默认值 `About`&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;# 关于描述&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;friends&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;# 友链名称，默认值 `Friends`&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;# 友链描述&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;# 错误名称，默认值 `404`&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;# 错误描述，默认值 `Page not found.`&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 需要被排除的文件列表&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;exclude&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;LICENSE&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;README.md&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;package.json&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Jekyll Theme ACG 主题的必要配置&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# 如果你不了解下面这些值的意义，那么请不要随意改动。&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;defaults&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;page&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;index.html&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;page&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;home&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;posts&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;page&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/posts/:title&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;baseurl&quot;&gt;baseurl&lt;/h3&gt;
+
+&lt;p&gt;只有当站点路径是域名下的子路径时，才必须要设置。&lt;/p&gt;
+
+&lt;p&gt;例如：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal&lt;/code&gt; 的站点路径是域名下的子路径，只有配置 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;baseurl: /jekyll-theme-acg-minimal&lt;/code&gt; 才可以正常使用。&lt;/p&gt;
+
+&lt;h3 id=&quot;acgcolor&quot;&gt;acg.color&lt;/h3&gt;
+
+&lt;p&gt;主题色可以在以下这些值中选择：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;red&lt;/li&gt;
+  &lt;li&gt;blue&lt;/li&gt;
+  &lt;li&gt;green&lt;/li&gt;
+  &lt;li&gt;yellow&lt;/li&gt;
+  &lt;li&gt;pink&lt;/li&gt;
+  &lt;li&gt;purple&lt;/li&gt;
+  &lt;li&gt;gray&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;acgbackground&quot;&gt;acg.background&lt;/h3&gt;
+
+&lt;p&gt;背景可以是外部链接，也可以是本站路径。&lt;/p&gt;
+
+&lt;p&gt;例如：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;background: /assets/bg/example.png&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;文章配置&quot;&gt;文章配置&lt;/h2&gt;
+
+&lt;p&gt;文章存放于 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; 文件夹中，文件名建议按照 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YYYY-MM-DD-title.md&lt;/code&gt; 的格式。&lt;/p&gt;
+
+&lt;p&gt;每篇文章都必须在开头使用 YAML 格式的 Front Matter，Front Matter 会使文件被 Jekyll 识别为特殊文件，Front Matter 的内容将会被绑定为这篇文章的独有属性。&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+title:
+description:
+categories: []
+tags: []
+lang:
+color:
+background:
+pin:
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;title必要&quot;&gt;title（必要）&lt;/h3&gt;
+
+&lt;p&gt;文章的标题。&lt;/p&gt;
+
+&lt;p&gt;如果没有手动设置 title 值，那么 Jekyll 将会使用文件名生成一个 title 值。假如有一篇文章的文件名是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2021-06-01-show-rendering-cn.md&lt;/code&gt;，那么自动生成的标题为 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Show Rendering Cn&lt;/code&gt;，通常应该避免这种情况。&lt;/p&gt;
+
+&lt;h3 id=&quot;description&quot;&gt;description&lt;/h3&gt;
+
+&lt;p&gt;文章的简述。&lt;/p&gt;
+
+&lt;p&gt;如果没有手动设置 description 的值，那么 Jekyll 将会自动提取文章的开头生成一个 description 值。&lt;/p&gt;
+
+&lt;h3 id=&quot;categories&quot;&gt;categories&lt;/h3&gt;
+
+&lt;p&gt;文章的分类。推荐使用数组的形式。&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+categories: [&quot;分类一&quot;, &quot;分类二&quot;, &quot;分类三&quot;, &quot;可 以 空 格&quot;] # 分类名中可以使用空格
+categories: 分类一 分类二 分类三 # 空格用于隔开，分类名中不能使用空格
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;tags&quot;&gt;tags&lt;/h3&gt;
+
+&lt;p&gt;文章的标签。基本规则与 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;categories&lt;/code&gt; 相同。&lt;/p&gt;
+
+&lt;h3 id=&quot;color&quot;&gt;color&lt;/h3&gt;
+
+&lt;p&gt;文章的主题色。&lt;/p&gt;
+
+&lt;p&gt;如果没有手动设置 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;color&lt;/code&gt; 的值，那么 Jekyll 将会读取全局配置 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 中的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;color&lt;/code&gt; 值。&lt;/p&gt;
+
+&lt;h3 id=&quot;background&quot;&gt;background&lt;/h3&gt;
+
+&lt;p&gt;文章背景图片。&lt;/p&gt;
+
+&lt;p&gt;如果没有手动设置 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;background&lt;/code&gt; 的值，那么 Jekyll 将会读取全局配置 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 中的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;background&lt;/code&gt; 值。&lt;/p&gt;
+
+&lt;h3 id=&quot;pin&quot;&gt;pin&lt;/h3&gt;
+
+&lt;p&gt;文章置顶选项。&lt;/p&gt;
+
+&lt;p&gt;如果 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pin&lt;/code&gt; 的值不是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;，那么本篇文章就不会在首页置顶。&lt;/p&gt;</content><author><name>Coder Zhao</name></author><category term="Jekyll Theme ACG" /><category term="guide" /><category term="chinese" /><summary type="html">快速开始</summary></entry><entry xml:lang="en-US"><title type="html">Jekyll Theme ACG Guide</title><link href="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/acg-guide-en" rel="alternate" type="text/html" title="Jekyll Theme ACG Guide" /><published>2021-07-03T00:00:00+00:00</published><updated>2021-07-03T00:00:00+00:00</updated><id>https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/acg-guide-en</id><content type="html" xml:base="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/acg-guide-en">&lt;blockquote&gt;
+  &lt;p&gt;My English is poor. In the event of any discrepancy, the Simplified Chinese post shall prevail.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;quick-start&quot;&gt;Quick start&lt;/h2&gt;
+
+&lt;h3 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ruby 2.7&lt;/li&gt;
+  &lt;li&gt;bundle 2.2&lt;/li&gt;
+  &lt;li&gt;jekyll 4.2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;manual-installation&quot;&gt;Manual Installation&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fork the repo &lt;a href=&quot;https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal&quot;&gt;jekyll-theme-acg-minimal&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle update &amp;amp;&amp;amp; bundle exec jekyll serve -o&lt;/code&gt; to build the site and make it available on a local server.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;automatic-deployment&quot;&gt;Automatic deployment&lt;/h3&gt;
+
+&lt;p&gt;Whenever the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch has a push operation, GitHub Actions will execute the content of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.github/workflows/deploy.yml&lt;/code&gt; file and publish the content of the site on the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;github-pages&lt;/code&gt; branch.&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to configure the settings of the repository.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-07-03-settings-pages.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;global-configuration&quot;&gt;Global configuration&lt;/h2&gt;
+
+&lt;p&gt;The global configuration is stored in the configuration file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                    &lt;span class=&quot;c1&quot;&gt;# address, such as `https://coderzhaoziwei.github.io`&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;baseurl&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# base path, default value is `/`&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                  &lt;span class=&quot;c1&quot;&gt;# title&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;            &lt;span class=&quot;c1&quot;&gt;# description&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                 &lt;span class=&quot;c1&quot;&gt;# author name, currently only used to display in the footer&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                   &lt;span class=&quot;c1&quot;&gt;# language, default value is `en-US`&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-theme-acg&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# theme&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# theme attributes&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;acg&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# theme color, default value is `red`&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;           &lt;span class=&quot;c1&quot;&gt;# theme background, default value is `https://cdn.jsdelivr.net/gh/coderzhaoziwei/jekyll-theme-acg/assets/images/pixiv86925095.png`&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;# default value is `Categories`&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;# default value is `Tags`&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;about&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;# default value is `About`&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;friends&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;# default value is `Friends`&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;# title of `404.html`, default value is `404`&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;# default value is `Page not found.`&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# excluded files&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;exclude&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;LICENSE&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;README.md&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;package.json&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# The necessary configuration of Jekyll Theme ACG&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# If you don't understand the meaning of the following values, please don't change them at will.&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;defaults&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;page&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;index.html&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;page&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;home&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;posts&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;page&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/posts/:title&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;baseurl&quot;&gt;baseurl&lt;/h3&gt;
+
+&lt;p&gt;Only when the site path is a sub-path under the domain name, it must be set.&lt;/p&gt;
+
+&lt;p&gt;For example: the site path of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal&lt;/code&gt; is a sub-path under the domain name. Only when &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;baseurl: /jekyll-theme-acg-minimal&lt;/code&gt; is configured can it be used normally.&lt;/p&gt;
+
+&lt;h3 id=&quot;acgcolor&quot;&gt;acg.color&lt;/h3&gt;
+
+&lt;p&gt;The theme color can be selected from the following values:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;red&lt;/li&gt;
+  &lt;li&gt;blue&lt;/li&gt;
+  &lt;li&gt;green&lt;/li&gt;
+  &lt;li&gt;yellow&lt;/li&gt;
+  &lt;li&gt;pink&lt;/li&gt;
+  &lt;li&gt;purple&lt;/li&gt;
+  &lt;li&gt;gray&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;acgbackground&quot;&gt;acg.background&lt;/h3&gt;
+
+&lt;p&gt;The background can be an external link or the path of the site.&lt;/p&gt;
+
+&lt;p&gt;For example: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;background: /assets/bg/example.png&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;post-configuration&quot;&gt;Post configuration&lt;/h2&gt;
+
+&lt;p&gt;Posts are stored in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; folder, and the file name is recommended to follow the format of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YYYY-MM-DD-title.md&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Each post must use Front Matter in YAML format at the beginning. Front Matter will recognize the file as a special file by Jekyll, and the content of Front Matter will be bound to the unique attributes of this article.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+title:
+description:
+categories: []
+tags: []
+lang:
+color:
+background:
+pin:
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;title-required&quot;&gt;title (required)&lt;/h3&gt;
+
+&lt;p&gt;The title of the post.&lt;/p&gt;
+
+&lt;p&gt;If the title value is not manually set, then Jekyll will use the file name to generate a title value. If the file name of a post is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2021-06-01-show-rendering-cn.md&lt;/code&gt;, then the automatically generated title is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Show Rendering Cn&lt;/code&gt;, which should usually be avoided.&lt;/p&gt;
+
+&lt;h3 id=&quot;description&quot;&gt;description&lt;/h3&gt;
+
+&lt;p&gt;Brief description of the post.&lt;/p&gt;
+
+&lt;p&gt;If the description value is not manually set, Jekyll will automatically extract the beginning of the post to generate a description value.&lt;/p&gt;
+
+&lt;h3 id=&quot;categories&quot;&gt;categories&lt;/h3&gt;
+
+&lt;p&gt;Categories of posts. It is recommended to use the form of an array.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+categories: [&quot;Category One&quot;, &quot;Category Two&quot;, &quot;Category Three&quot;] # Spaces can be used in the category name
+
+# or
+categories: CategoryOne CategoryTwo CategoryThree # Space is used to separate
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;tags&quot;&gt;tags&lt;/h3&gt;
+
+&lt;p&gt;The tags of the post. The rules are the same as for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;categories&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;color&quot;&gt;color&lt;/h3&gt;
+
+&lt;p&gt;The theme color of the post.&lt;/p&gt;
+
+&lt;p&gt;If the value of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;color&lt;/code&gt; is not set manually, Jekyll will read the value of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;color&lt;/code&gt; in the global configuration &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;background&quot;&gt;background&lt;/h3&gt;
+
+&lt;p&gt;The background image of the post.&lt;/p&gt;
+
+&lt;p&gt;If the value of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;background&lt;/code&gt; is not manually set, Jekyll will read the value of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;background&lt;/code&gt; in the global configuration &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;pin&quot;&gt;pin&lt;/h3&gt;
+
+&lt;p&gt;Top article option.&lt;/p&gt;
+
+&lt;p&gt;If the value of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pin&lt;/code&gt; is not &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;, then this post will not be at the top of the homepage.&lt;/p&gt;</content><author><name>Coder Zhao</name></author><category term="Jekyll Theme ACG" /><category term="guide" /><category term="english" /><summary type="html">My English is poor. In the event of any discrepancy, the Simplified Chinese post shall prevail.</summary></entry><entry><title type="html">Markdown 语法的渲染效果</title><link href="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/acg-markdown-cn" rel="alternate" type="text/html" title="Markdown 语法的渲染效果" /><published>2021-07-01T00:00:00+00:00</published><updated>2021-07-01T00:00:00+00:00</updated><id>https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/acg-markdown-cn</id><content type="html" xml:base="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/acg-markdown-cn">&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的 HTML 文档。&lt;/p&gt;
+
+  &lt;p&gt;由于 Markdown 的轻量化、易读易写特性，甚至对于图片、图表、数学公式都有支持，目前许多网站都广泛使用 Markdown 来撰写帮助文档，或是用于论坛上发表消息。&lt;/p&gt;
+
+  &lt;p class=&quot;text-right&quot;&gt;—— &lt;a href=&quot;https://zh.wikipedia.org/wiki/Markdown&quot;&gt;维基百科&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Github 支持的 Markdown 语法标准被称为 &lt;a href=&quot;https://help.github.com/articles/github-flavored-markdown&quot;&gt;GitHub Flavored Markdown&lt;/a&gt;，简称 GFM。Jekyll Theme ACG 主题在 GFM 的语法之外还支持一些其他的特性与使用方式。&lt;/p&gt;
+
+&lt;h2 id=&quot;列表&quot;&gt;列表&lt;/h2&gt;
+
+&lt;h3 id=&quot;无序列表&quot;&gt;无序列表&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- A
+  - a
+    - i
+    - ii
+  - b
+    - I
+    - II
+- B
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;输出：&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;A
+    &lt;ul&gt;
+      &lt;li&gt;a
+        &lt;ul&gt;
+          &lt;li&gt;i&lt;/li&gt;
+          &lt;li&gt;ii&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;b
+        &lt;ul&gt;
+          &lt;li&gt;I&lt;/li&gt;
+          &lt;li&gt;II&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;B&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;有序列表&quot;&gt;有序列表&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. A
+   1. a
+   1. b
+   1. c
+2. B
+3. C
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输出：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;A
+    &lt;ol&gt;
+      &lt;li&gt;a&lt;/li&gt;
+      &lt;li&gt;b&lt;/li&gt;
+      &lt;li&gt;c&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;B&lt;/li&gt;
+  &lt;li&gt;C&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;无序的数字会自动变为有序。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;待办列表&quot;&gt;待办列表&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- [x] 待办一
+- [ ] 待办二
+- [x] 待办三
+- [ ] 待办四
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li&gt;输出：&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;待办一&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;待办二&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;待办三&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;待办四&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;表格&quot;&gt;表格&lt;/h2&gt;
+
+&lt;h3 id=&quot;标准表格&quot;&gt;标准表格&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-markdown&quot;&gt;# 标准 Markdown 语法中的表格示例
+| Column A | Column B | Column C |
+| :------- | :&lt;span&gt;------&lt;/span&gt;: | -------: |
+|   Left   |  Center  |  Right   |
+|    A     |    B     |    C     |
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输出：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Column A&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Column B&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Column C&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Left&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Center&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;Right&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;A&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;B&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;C&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;忽略表头与对齐方式&quot;&gt;忽略表头与对齐方式&lt;/h3&gt;
+
+&lt;p&gt;与标准的 Markdown 语法不同，表格的表头与对齐方式可以省略。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+| 7 | 8 | 9 |
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输出：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;自定义对齐方式&quot;&gt;自定义对齐方式&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-markdown&quot;&gt;# 每个单元格都可以使用 `:` 控制自身的对齐方式。
+| ########## | ########## | ########## |
+|:   Left    |:  Center  :|   Right   :|
+|:  Center  :|   Right   :|:   Left    |
+|   Right   :|:   Left    |:  Center  :|
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输出：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;##########&lt;/td&gt;
+      &lt;td&gt;##########&lt;/td&gt;
+      &lt;td&gt;##########&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;:   Left&lt;/td&gt;
+      &lt;td&gt;:  Center  :&lt;/td&gt;
+      &lt;td&gt;Right   :&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;:  Center  :&lt;/td&gt;
+      &lt;td&gt;Right   :&lt;/td&gt;
+      &lt;td&gt;:   Left&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Right   :&lt;/td&gt;
+      &lt;td&gt;:   Left&lt;/td&gt;
+      &lt;td&gt;:  Center  :&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;合并表格列&quot;&gt;合并表格列&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-markdown&quot;&gt;# 在 `||` 之间所表示的单元格，将被合并。
+| 1 | 2 | 3 |
+|: 45 :|&lt;b&gt;&lt;/b&gt;| 6 |
+|: 789   :|&lt;b&gt;&lt;/b&gt;|&lt;b&gt;&lt;/b&gt;|
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输出：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;: 45 :|&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;: 789   :||&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;合并表格行&quot;&gt;合并表格行&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-markdown&quot;&gt;# 以 `^^` 开头的单元格，将被合并。
+| 1 | 2 |  3  |
+| 4  5 |&lt;b&gt;&lt;/b&gt;|^^ 6 |
+|^^ 7 8|&lt;b&gt;&lt;/b&gt;|  9  |
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输出：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4  5 |&lt;/td&gt;
+      &lt;td&gt;^^ 6&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;^^ 7 8|&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;代码&quot;&gt;代码&lt;/h2&gt;
+
+&lt;h3 id=&quot;单行代码&quot;&gt;单行代码&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;输入：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;`const name = &quot;jekyll-theme-acg&quot;;`&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;输出：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const name = &quot;jekyll-theme-acg&quot;;&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;多行代码&quot;&gt;多行代码&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-markdown&quot;&gt;```javascript
+function print() {
+  console.log(&quot;Hello world.&quot;);
+}
+print(); // Hello world.
+```&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输出：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Hello world.&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Hello world.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;图片&quot;&gt;图片&lt;/h2&gt;
+
+&lt;h3 id=&quot;普通图片&quot;&gt;普通图片&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;![背景图](https://cdn.jsdelivr.net/gh/coderzhaoziwei/jekyll-theme-acg/assets/images/pixiv86925095.png)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;输出：&lt;img src=&quot;https://cdn.jsdelivr.net/gh/coderzhaoziwei/jekyll-theme-acg/assets/images/pixiv86925095.png&quot; alt=&quot;背景图&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;修改图片的样式&quot;&gt;修改图片的样式&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![背景图](https://cdn.jsdelivr.net/gh/coderzhaoziwei/jekyll-theme-acg/assets/images/pixiv86925095.png){: style=&quot;width: 128px; height: 128px; object-fit: cover; float: right; animation: spin 10s linear infinite;&quot; class=&quot;m-2 rounded-full&quot; }
+
+- 这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;输出：&lt;img src=&quot;https://cdn.jsdelivr.net/gh/coderzhaoziwei/jekyll-theme-acg/assets/images/pixiv86925095.png&quot; alt=&quot;背景图&quot; style=&quot;width: 128px; height: 128px; object-fit: cover; float: right; animation: spin 10s linear infinite;&quot; class=&quot;m-2 rounded-full&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落这里有一段很长的段落。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;不仅仅适用于图片，使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{: key=&quot;value&quot; }&lt;/code&gt; 的格式，可以在 Markdown 中为元素添加 HTML 属性。这里的示例甚至制作了动画效果。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;数学公式&quot;&gt;数学公式&lt;/h2&gt;
+
+&lt;h3 id=&quot;行内公式&quot;&gt;行内公式&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$\Gamma(n) = (n-1)!\quad\forall n \in\mathbb N$&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;输出：$\Gamma(n) = (n-1)!\quad\forall n \in\mathbb N$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;块级公式&quot;&gt;块级公式&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$$ ax^2 + bx + c = 0 \quad (a \neq 0)  $$
+
+$$ x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输出：&lt;/li&gt;
+&lt;/ul&gt;
+
+\[ax^2 + bx + c = 0 \quad (a \neq 0)\]
+
+\[x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]
+
+&lt;blockquote&gt;
+  &lt;p&gt;使用鼠标右键生成的公式图片，还有小惊喜。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;其他&quot;&gt;其他&lt;/h2&gt;
+
+&lt;h3 id=&quot;文本倾斜&quot;&gt;文本倾斜&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*文本倾斜*&lt;/code&gt; / &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_文本倾斜_&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;输出：&lt;em&gt;文本倾斜&lt;/em&gt; / &lt;em&gt;文本倾斜&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;文本加粗&quot;&gt;文本加粗&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;**文本加粗**&lt;/code&gt; / &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__文本加粗__&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;输出：&lt;strong&gt;文本加粗&lt;/strong&gt; / &lt;strong&gt;文本加粗&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;文本删除&quot;&gt;文本删除&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~~删除线~~&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;输出：&lt;del&gt;删除线&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;分割线&quot;&gt;分割线&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;*****
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输出：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;单独一行，连续使用三个以上的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt; 或 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt; 就可以生成分割线。
+因为 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;---&lt;/code&gt; 会被识别为 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Front Matter&lt;/code&gt;，所以推荐使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt; 号生成分割线。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;链接&quot;&gt;链接&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[Github](https://github.com)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;输出：&lt;a href=&quot;https://github.com&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;引用&quot;&gt;引用&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; 通常用于引用一段其他地方的内容。
+&amp;gt; 普通换行的内容，会接在上一行的结尾。
+&amp;gt;
+&amp;gt; 在引用中置空一行，才可以换行。
+&amp;gt;
+&amp;gt; &amp;gt; 引用的嵌套。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输出：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;通常用于引用一段其他地方的内容。
+普通换行的内容，会接在上一行的结尾。&lt;/p&gt;
+
+  &lt;p&gt;在引用中置空一行，才可以换行。&lt;/p&gt;
+
+  &lt;blockquote&gt;
+    &lt;p&gt;引用的嵌套。&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;脚注&quot;&gt;脚注&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 第一句话有一个示例脚注一。[^footnote1]
+
+[^footnote1]: 对脚注对象进行说明一。
+
+- 第二句话有一个示例脚注二。[^footnote2]
+
+[^footnote2]: 对脚注对象进行说明二。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;输出：&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第一句话有一个示例脚注一。&lt;sup id=&quot;fnref:footnote1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:footnote1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;第二句话有一个示例脚注二。&lt;sup id=&quot;fnref:footnote2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:footnote2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;键盘按钮&quot;&gt;键盘按钮&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;kbd&amp;gt;Ctrl&amp;lt;/kbd&amp;gt; / &amp;lt;kbd&amp;gt;Command&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;C&amp;lt;/kbd&amp;gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;输出：&lt;kbd&gt;Ctrl&lt;/kbd&gt; / &lt;kbd&gt;Command&lt;/kbd&gt; + &lt;kbd&gt;C&lt;/kbd&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;emoji&quot;&gt;Emoji&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;输入：&lt;code class=&quot;language-plaintext&quot;&gt;:&lt;b&gt;&lt;/b&gt;cat&lt;b&gt;&lt;/b&gt;: :&lt;b&gt;&lt;/b&gt;dog&lt;b&gt;&lt;/b&gt;:&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;输出：:cat: :dog:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;更多表情可以参考：&lt;a href=&quot;https://github.com/ikatyang/emoji-cheat-sheet&quot;&gt;emoji-cheat-sheet&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:footnote1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;对脚注对象进行说明一。 &lt;a href=&quot;#fnref:footnote1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:footnote2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;对脚注对象进行说明二。 &lt;a href=&quot;#fnref:footnote2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Coder Zhao</name></author><category term="Jekyll Theme ACG" /><category term="markdown" /><category term="chinese" /><summary type="html">简介</summary></entry><entry xml:lang="en-US"><title type="html">Rendering effect of Markdown syntax</title><link href="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/acg-markdown-en" rel="alternate" type="text/html" title="Rendering effect of Markdown syntax" /><published>2021-07-01T00:00:00+00:00</published><updated>2021-07-01T00:00:00+00:00</updated><id>https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/acg-markdown-en</id><content type="html" xml:base="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/acg-markdown-en">&lt;blockquote&gt;
+  &lt;p&gt;My English is poor. In the event of any discrepancy, the Simplified Chinese post shall prevail.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;John Gruber and Aaron Swartz created Markdown in 2004 as a markup language that is appealing to human readers in its source code form.[9]&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Markdown is a lightweight markup language for creating formatted text using a plain-text editor.&lt;/p&gt;
+
+  &lt;p&gt;Markdown is widely used in blogging, instant messaging, online forums, collaborative software, documentation pages, and readme files.&lt;/p&gt;
+
+  &lt;p class=&quot;text-right&quot;&gt;—— &lt;a href=&quot;https://en.wikipedia.org/wiki/Markdown&quot;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The Markdown syntax standard supported by Github is called &lt;a href=&quot;https://help.github.com/articles/github-flavored-markdown&quot;&gt;GitHub Flavored Markdown&lt;/a&gt;, or GFM for short. Jekyll Theme ACG supports some other features besides GFM syntax.&lt;/p&gt;
+
+&lt;h2 id=&quot;list&quot;&gt;List&lt;/h2&gt;
+
+&lt;h3 id=&quot;unordered-list&quot;&gt;Unordered list&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- A
+  - a
+    - i
+    - ii
+  - b
+    - I
+    - II
+- B
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Output:&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;A
+    &lt;ul&gt;
+      &lt;li&gt;a
+        &lt;ul&gt;
+          &lt;li&gt;i&lt;/li&gt;
+          &lt;li&gt;ii&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;b
+        &lt;ul&gt;
+          &lt;li&gt;I&lt;/li&gt;
+          &lt;li&gt;II&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;B&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ordered-list&quot;&gt;Ordered list&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. A
+   1. a
+   1. b
+   1. c
+2. B
+3. C
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Output:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;A
+    &lt;ol&gt;
+      &lt;li&gt;a&lt;/li&gt;
+      &lt;li&gt;b&lt;/li&gt;
+      &lt;li&gt;c&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;B&lt;/li&gt;
+  &lt;li&gt;C&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Unordered numbers will automatically become ordered.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;to-do-list&quot;&gt;To do list&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- [x] TODO 1
+- [ ] TODO 2
+- [x] TODO 3
+- [ ] TODO 4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li&gt;Output:&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;TODO 1&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;TODO 2&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;TODO 3&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;TODO 4&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;table&quot;&gt;Table&lt;/h2&gt;
+
+&lt;h3 id=&quot;standard-table&quot;&gt;Standard table&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-markdown&quot;&gt;# Examples of tables in standard Markdown syntax
+| Column A | Column B | Column C |
+| :------- | :&lt;span&gt;------&lt;/span&gt;: | -------: |
+|   Left   |  Center  |  Right   |
+|    A     |    B     |    C     |
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Output:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Column A&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Column B&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Column C&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Left&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Center&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;Right&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;A&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;B&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;C&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;ignore-headers-and-alignment&quot;&gt;Ignore headers and alignment&lt;/h3&gt;
+
+&lt;p&gt;Unlike standard Markdown syntax, the header and alignment of the table can be omitted.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+| 7 | 8 | 9 |
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Output:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;custom-alignment&quot;&gt;Custom alignment&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-markdown&quot;&gt;# Each cell can use `:` to control its own alignment.
+| ########## | ########## | ########## |
+|:   Left    |:  Center  :|   Right   :|
+|:  Center  :|   Right   :|:   Left    |
+|   Right   :|:   Left    |:  Center  :|
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Output:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;##########&lt;/td&gt;
+      &lt;td&gt;##########&lt;/td&gt;
+      &lt;td&gt;##########&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;:   Left&lt;/td&gt;
+      &lt;td&gt;:  Center  :&lt;/td&gt;
+      &lt;td&gt;Right   :&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;:  Center  :&lt;/td&gt;
+      &lt;td&gt;Right   :&lt;/td&gt;
+      &lt;td&gt;:   Left&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Right   :&lt;/td&gt;
+      &lt;td&gt;:   Left&lt;/td&gt;
+      &lt;td&gt;:  Center  :&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;combine-table-columns&quot;&gt;Combine table columns&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-markdown&quot;&gt;# The cells between `||` will be merged.
+| 1 | 2 | 3 |
+|: 45 :|&lt;b&gt;&lt;/b&gt;| 6 |
+|: 789   :|&lt;b&gt;&lt;/b&gt;|&lt;b&gt;&lt;/b&gt;|
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Output:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;: 45 :|&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;: 789   :||&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;combine-table-rows&quot;&gt;Combine table rows&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-markdown&quot;&gt;# The cells beginning with `^^` will be merged.
+| 1 | 2 |  3  |
+| 4  5 |&lt;b&gt;&lt;/b&gt;|^^ 6 |
+|^^ 7 8|&lt;b&gt;&lt;/b&gt;|  9  |
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Output:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4  5 |&lt;/td&gt;
+      &lt;td&gt;^^ 6&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;^^ 7 8|&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
+
+&lt;h3 id=&quot;single-line-of-code&quot;&gt;Single line of code&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Input: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;`const name = &quot;jekyll-theme-acg&quot;;`&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Output: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const name = &quot;jekyll-theme-acg&quot;;&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;multiple-lines-of-code&quot;&gt;Multiple lines of code&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-markdown&quot;&gt;```javascript
+function print() {
+  console.log(&quot;Hello world.&quot;);
+}
+print(); // Hello world.
+```&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Output:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Hello world.&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Hello world.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;picture&quot;&gt;Picture&lt;/h2&gt;
+
+&lt;h3 id=&quot;normal-picture&quot;&gt;Normal picture&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;![picture](https://cdn.jsdelivr.net/gh/coderzhaoziwei/jekyll-theme-acg/assets/images/pixiv86925095.png)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Output: &lt;img src=&quot;https://cdn.jsdelivr.net/gh/coderzhaoziwei/jekyll-theme-acg/assets/images/pixiv86925095.png&quot; alt=&quot;picture&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;modify-the-style-of-the-picture&quot;&gt;Modify the style of the picture&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![picture](https://cdn.jsdelivr.net/gh/coderzhaoziwei/jekyll-theme-acg/assets/images/pixiv86925095.png){: style=&quot;width: 128px; height: 128px; object-fit: cover; float: right; animation: spin 10s linear infinite;&quot; class=&quot;m-2 rounded-full&quot; }
+
+- There is a very long paragraph here. There is a very long paragraph here. There is a very long paragraph here. There is a very long paragraph here. There is a very long paragraph here. There is a very long paragraph here. There is a very long paragraph here. There is a very long paragraph here. There is a very long paragraph here. There is a very long paragraph here.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Output: &lt;img src=&quot;https://cdn.jsdelivr.net/gh/coderzhaoziwei/jekyll-theme-acg/assets/images/pixiv86925095.png&quot; alt=&quot;picture&quot; style=&quot;width: 128px; height: 128px; object-fit: cover; float: right; animation: spin 10s linear infinite;&quot; class=&quot;m-2 rounded-full&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;There is a very long paragraph here. There is a very long paragraph here. There is a very long paragraph here. There is a very long paragraph here. There is a very long paragraph here. There is a very long paragraph here. There is a very long paragraph here. There is a very long paragraph here. There is a very long paragraph here. There is a very long paragraph here.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Not only for images, but with the format of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{: key=&quot;value&quot; }&lt;/code&gt;, you can add HTML attributes to elements in Markdown. The examples here even produced animation effects.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;mathematical-formula&quot;&gt;Mathematical formula&lt;/h2&gt;
+
+&lt;h3 id=&quot;in-line-formula&quot;&gt;In-line formula&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$\Gamma(n) = (n-1)!\quad\forall n \in\mathbb N$&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Output: $\Gamma(n) = (n-1)!\quad\forall n \in\mathbb N$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;block-level-formula&quot;&gt;Block-level formula&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$$ ax^2 + bx + c = 0 \quad (a \neq 0)  $$
+
+$$ x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Output:&lt;/li&gt;
+&lt;/ul&gt;
+
+\[ax^2 + bx + c = 0 \quad (a \neq 0)\]
+
+\[x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]
+
+&lt;h2 id=&quot;others&quot;&gt;Others&lt;/h2&gt;
+
+&lt;h3 id=&quot;slanted-text&quot;&gt;Slanted text&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*Slanted text*&lt;/code&gt; / &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_Slanted text_&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Output: &lt;em&gt;Slanted text&lt;/em&gt; / &lt;em&gt;Slanted text&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;bold-text&quot;&gt;Bold text&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;**Bold text**&lt;/code&gt; / &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__Bold text__&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Output: &lt;strong&gt;Bold text&lt;/strong&gt; / &lt;strong&gt;Bold text&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;deleted-text&quot;&gt;Deleted text&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~~Deleted text~~&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Output: &lt;del&gt;Deleted text&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;dividing-line&quot;&gt;Dividing line&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;*****
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Output:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;On a single line, use more than three &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt; in a row to generate dividing lines.
+it is recommended to use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt; to generate dividing lines, because &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;---&lt;/code&gt; will be recognized as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Front Matter&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;link&quot;&gt;Link&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[Github](https://github.com)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Output: &lt;a href=&quot;https://github.com&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;quote&quot;&gt;Quote&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; Usually used to quote a piece of content elsewhere.
+&amp;gt; The content of ordinary line breaks will be attached to the end of the previous line.
+&amp;gt;
+&amp;gt; Leave a blank line in the quote to wrap the line.
+&amp;gt;
+&amp;gt; &amp;gt; Nesting of references.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Output:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Usually used to quote a piece of content elsewhere.
+The content of ordinary line breaks will be attached to the end of the previous line.&lt;/p&gt;
+
+  &lt;p&gt;Leave a blank line in the quote to wrap the line.&lt;/p&gt;
+
+  &lt;blockquote&gt;
+    &lt;p&gt;Nesting of references.&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;footnote&quot;&gt;Footnote&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- The first sentence has an example footnote one. [^footnote1]
+
+[^footnote1]: Explain the object of footnote one.
+
+- The second sentence has an example footnote two. [^footnote2]
+
+[^footnote2]: Explain the object of footnote two.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Output:&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The first sentence has an example footnote one. &lt;sup id=&quot;fnref:footnote1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:footnote1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The second sentence has an example footnote two. &lt;sup id=&quot;fnref:footnote2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:footnote2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;keyboard-buttons&quot;&gt;Keyboard buttons&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;kbd&amp;gt;Ctrl&amp;lt;/kbd&amp;gt; / &amp;lt;kbd&amp;gt;Command&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;C&amp;lt;/kbd&amp;gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Output: &lt;kbd&gt;Ctrl&lt;/kbd&gt; / &lt;kbd&gt;Command&lt;/kbd&gt; + &lt;kbd&gt;C&lt;/kbd&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;emoji&quot;&gt;Emoji&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Input: &lt;code class=&quot;language-plaintext&quot;&gt;:&lt;b&gt;&lt;/b&gt;cat&lt;b&gt;&lt;/b&gt;: :&lt;b&gt;&lt;/b&gt;dog&lt;b&gt;&lt;/b&gt;:&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Output: :cat: :dog:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;More emoji: &lt;a href=&quot;https://github.com/ikatyang/emoji-cheat-sheet&quot;&gt;emoji-cheat-sheet&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:footnote1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Explain the object of footnote one. &lt;a href=&quot;#fnref:footnote1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:footnote2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Explain the object of footnote two. &lt;a href=&quot;#fnref:footnote2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Coder Zhao</name></author><category term="Jekyll Theme ACG" /><category term="markdown" /><category term="english" /><summary type="html">My English is poor. In the event of any discrepancy, the Simplified Chinese post shall prevail.</summary></entry><entry><title type="html">Configure background</title><link href="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/post-bg" rel="alternate" type="text/html" title="Configure background" /><published>2021-06-04T00:00:00+00:00</published><updated>2021-06-04T00:00:00+00:00</updated><id>https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/post-bg</id><content type="html" xml:base="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/post-bg">&lt;p&gt;You can override the global background image in a post. It supports links outside the site or local links in the site.&lt;/p&gt;</content><author><name>Coder Zhao</name></author><category term="C2" /><category term="tag3" /><category term="tag2" /><summary type="html">You can override the global background image in a post. It supports links outside the site or local links in the site.</summary></entry><entry><title type="html">Yellow theme color</title><link href="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/post-yellow" rel="alternate" type="text/html" title="Yellow theme color" /><published>2021-06-03T00:00:00+00:00</published><updated>2021-06-03T00:00:00+00:00</updated><id>https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/post-yellow</id><content type="html" xml:base="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/post-yellow">&lt;p&gt;This post is used yellow theme color.&lt;/p&gt;</content><author><name>Coder Zhao</name></author><category term="C1" /><category term="tag6" /><summary type="html">This post is used yellow theme color.</summary></entry><entry><title type="html">Pinned post</title><link href="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/post-pin" rel="alternate" type="text/html" title="Pinned post" /><published>2021-06-02T00:00:00+00:00</published><updated>2021-06-02T00:00:00+00:00</updated><id>https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/post-pin</id><content type="html" xml:base="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/post-pin">&lt;p&gt;This post will be pinned on the top.&lt;/p&gt;
+
+&lt;p&gt;The theme-color of this post is blue.&lt;/p&gt;</content><author><name>Coder Zhao</name></author><category term="C1" /><category term="tag2" /><category term="tag3" /><summary type="html">This post will be pinned on the top.</summary></entry><entry xml:lang="en-US"><title type="html">Title of post</title><link href="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/post-demo" rel="alternate" type="text/html" title="Title of post" /><published>2021-06-01T00:00:00+00:00</published><updated>2021-06-01T00:00:00+00:00</updated><id>https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/post-demo</id><content type="html" xml:base="https://coderzhaoziwei.github.io/jekyll-theme-acg-minimal/posts/post-demo">&lt;p&gt;This is a demo post.&lt;/p&gt;</content><author><name>Author Name</name></author><category term="C1" /><category term="tag1" /><category term="tag2" /><summary type="html">This is a demo post.</summary></entry></feed>
